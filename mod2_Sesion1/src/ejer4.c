@@ -1,4 +1,6 @@
 /*
+Autora: Ana Alicia Vílchez Ceballos
+
 ejer4.c
 Trabajo con llamadas al sistema del Sistema de Archivos ''POSIX 2.10 compliant''
 */
@@ -17,8 +19,8 @@ Trabajo con llamadas al sistema del Sistema de Archivos ''POSIX 2.10 compliant''
 #include<errno.h>
 #include<string.h>
 			   // aqui construimos la macro
-#define S_REGULAR(mode) (((mode) & S_IFREG) == 0100000) // un numero multiplicado por si mismo, da ese numero
-
+#define S_REGULAR(mode) (((mode) & S_IFREG) == 0100000) // un numero multiplicado por si mismo, da ese numero (en este caso
+							// en binario)
 int main(int argc, char *argv[])
 {
 
@@ -27,7 +29,7 @@ struct stat atributos;
 char tipoArchivo[30];
 
 if(argc<2) {
-	printf("\nSintaxis de ejecucion: tarea2 [<nombre_archivo>]+\n\n");
+	printf("\nComo minimo se exige un argumento");
 	exit(-1);
 }
 for(i=1;i<argc;i++) {
