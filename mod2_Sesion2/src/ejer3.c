@@ -6,9 +6,9 @@
 // de esos ficheros asi como el numero de ficheros que se han obtenido con estas características
 // la  modificación de los permisos y obtencion de sus atributos.
 	
-						//POSIX Standard: 2.6 Primitive System Data Types <sys/types.h>
+						
 #include <unistd.h>		//POSIX Standard: 2.10 Symbolic Constants         <unistd.h>
-#include <sys/stat.h>
+#include <sys/stat.h>		
 #include <fcntl.h>		//Needed for open
 #include <stdio.h>
 #include <errno.h>
