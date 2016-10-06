@@ -1,4 +1,5 @@
 /*
+
 tarea2.c
 Trabajo con llamadas al sistema del Sistema de Archivos ''POSIX 2.10 compliant''
 */
@@ -38,7 +39,7 @@ for(i=1;i<argc;i++) {
 		else if(S_ISDIR(atributos.st_mode)) strcpy(tipoArchivo,"Directorio");
 		else if(S_ISCHR(atributos.st_mode)) strcpy(tipoArchivo,"Especial de caracteres");
 		else if(S_ISBLK(atributos.st_mode)) strcpy(tipoArchivo,"Especial de bloques");
-		else if(S_ISFIFO(atributos.st_mode)) strcpy(tipoArchivo,"Tubería con nombre (FIFO)");
+		else if(S_ISFIFO(atributos.st_mode)) strcpy(tipoArchivo,"TuberÃ­a con nombre (FIFO)");
 		else if(S_ISLNK(atributos.st_mode)) strcpy(tipoArchivo,"Enlace relativo (soft)");
 		else if(S_ISSOCK(atributos.st_mode)) strcpy(tipoArchivo,"Socket");
 		else strcpy(tipoArchivo,"Tipo de archivo desconocido");
