@@ -21,26 +21,26 @@ void finalizar(pid_t *pid){
 	for (int i=0; i<nprocs; i++) {
 		if(i %2 != 0){
 			if (waitpid(pid[i],0,0) > 0) {   // si la espera ha tenido exito y finaliza el hijo tal...         
-	    		printf("Acaba de finalizar mi hijo %d (orden %d)\n",pid[i], i);
-	    		printf("Solo me quedan %d hijos vivos\n",nprocs - i -1);
+				printf("Acaba de finalizar mi hijo %d (orden %d)\n",pid[i], i);
+				printf("Solo me quedan %d hijos vivos\n",nprocs - i -1);
+      			}
       		}
-      	}
 	}
 
 	for (int i=0; i<nprocs; i++) {
 		if(i %2 == 0){
 			if (waitpid(pid[i],0,0) > 0) {   // si la espera ha tenido exito y finaliza el hijo tal...         
-	    		printf("Acaba de finalizar mi hijo %d (orden %d)\n",pid[i], i);
-	    		printf("Solo me quedan %d hijos vivos\n",nprocs - i -1);
+				printf("Acaba de finalizar mi hijo %d (orden %d)\n",pid[i], i);
+				printf("Solo me quedan %d hijos vivos\n",nprocs - i -1);
+      			}
       		}
-      	}
 	}
 */
 	for (int i=0; i<nprocs; i++) {
 		if (waitpid(pid[i],0,0) > 0) {   // si la espera ha tenido exito y finaliza el hijo tal...         
-	    	printf("Acaba de finalizar mi hijo %d (orden %d)\n",pid[i], i);
-	    	printf("Solo me quedan %d hijos vivos\n",nprocs - i -1);
-      	}
+			printf("Acaba de finalizar mi hijo %d (orden %d)\n",pid[i], i);
+			printf("Solo me quedan %d hijos vivos\n",nprocs - i -1);
+      		}
       	
 	}
 	
