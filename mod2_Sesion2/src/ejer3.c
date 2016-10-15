@@ -1,9 +1,14 @@
-// en este ejercicio trataremos con la apertura de los ficheros de un directorio,
+
+//Autora: Ana Alicia Vílchez Ceballos
+
+// en este ejercicio llevaremos a cabo el recorrido de un directorio indicando si 
+// los ficheros tienen determinados permisos, y si es así mostrarlos. Como dato final añadimos el tamaño
+// de esos ficheros asi como el numero de ficheros que se han obtenido con estas características
 // la  modificación de los permisos y obtencion de sus atributos.
 	
-						//POSIX Standard: 2.6 Primitive System Data Types <sys/types.h>
+						
 #include <unistd.h>		//POSIX Standard: 2.10 Symbolic Constants         <unistd.h>
-#include <sys/stat.h>
+#include <sys/stat.h>		
 #include <fcntl.h>		//Needed for open
 #include <stdio.h>
 #include <errno.h>
@@ -36,11 +41,11 @@ int main(int argc, char *argv[]){
  	/* Leemos las entradas del directorio */
 	printf("Los i nodos son:\n");
  	while((direntp = readdir(dirp)) != NULL) {
- 		//obtenemos los atributos de cada archivo dentro del directorio
-
- 		stat(direntp->d_name,&atributos) ;
-			
-		if(S_REGULAR(atributos.st_mode) && (atributos.st_mode & (S_IXGRP | S_IXOTH) == (S_IXGRP | S_IXOTH))){ // Si el archivo es regular y tiene permisos de ejecucucion para grupos y para otros
+		
+		//obtenemos los atributos de cada archivo dentro del directorio
+ 		stat(direntp->d_name,&atributos) ; 
+		// Si el archivo es regular y tiene permisos de ejecucucion para grupos y para otros...	
+		if(S_REGULAR(atributos.st_mode) && (atributos.st_mode & (S_IXGRP | S_IXOTH) == (S_IXGRP | S_IXOTH))){ 
 			printf("%s\t%d\n", direntp->d_name, direntp->d_ino);
 			n_archivosr += 1;
 			tam_archr += direntp->d_reclen;
@@ -48,7 +53,7 @@ int main(int argc, char *argv[]){
 		} 
  	}
  	printf("\nExisten %d archivos regulares con permiso x para grupo y otros\n", n_archivosr);
- 	printf("El tamanio total ocupado por dichos archivos es de %7.2f bytes \n", tam_archr/8);
+ 	printf("El tamanio total ocupado por dichos archivos es de %7.2f bytes \n", tam_archr/8); // pasamos el tamanio a bytes
 
 
  	return 0;

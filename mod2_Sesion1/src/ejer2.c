@@ -1,4 +1,5 @@
 /*
+Autora: Ana Alicia Vílchez Ceballos
 ejer2.c
 Trabajo con llamadas al sistema del Sistema de Archivos ''POSIX 2.10 compliant''
 // este ejercicio no está del todo bien y no se por qué
@@ -53,8 +54,8 @@ int main(int argc, char *argv[])
 	// esto se lo he puesto para meter la frase al principio, ya que si no lo pongo
 	//pisaria lo primero que se escribe
 
-	if((write(fx,"eeeeeeeeeeeeeeeeeeeeee",22)) < 0) {  // este \n lo pongo para que luego cuando volvamos al principio del fichero con lseek pueda escribir el numero de grupos
-			perror("\nError en el tercer write");
+	if((write(fx,"eeeeeeeeeeeeeeeeeeeeee",22)) < 0) {  // estos caracteres lo pongo para que luego cuando volvamos
+			perror("\nError en el tercer write"); //  al principio del fichero con lseek pueda escribir el numero de grupos
 			exit(EXIT_FAILURE);
 	}
 	
