@@ -1,4 +1,7 @@
+// Autora: Ana Alicia Vílchez Ceballos
+
 // en este ejercicio trataremso con la apretura, modificación de los permisos de sus ficheros y obtencion de sus atributos
+
 	
 						//POSIX Standard: 2.6 Primitive System Data Types <sys/types.h>
 #include <unistd.h>		//POSIX Standard: 2.10 Symbolic Constants         <unistd.h>
