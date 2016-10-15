@@ -59,23 +59,19 @@ int main(int argc, char *argv[]){
 			
 			if((pid[1] = fork()) == 0){
 				printf("\nsoy el hijo %d\n", getpid());// si no es el hijo el proceso padre vuelve a invocar al hijo y continua con el código finalizar(pid)
-				//finalizar(pid);
 			}
 			else {
 				if((pid[2] = fork()) == 0){
 					printf("\nsoy el hijo %d\n", getpid());// Proceso hijo
-					//finalizar(pid);
 				}
 				else {
 					if((pid[3] = fork()) == 0){
 						printf("\nsoy el hijo %d\n", getpid());// Proceso hijo
-						//finalizar(pid);
 					}
 					else {
 						
 						if((pid[4] = fork()) == 0){
 							printf("\nsoy el hijo %d\n", getpid());// Proceso hijo
-							//finalizar(pid);
 						}
 					}
 				}
