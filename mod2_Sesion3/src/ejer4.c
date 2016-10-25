@@ -21,26 +21,26 @@ void finalizar(pid_t *pid){
 	for (int i=0; i<nprocs; i++) {
 		if(i %2 != 0){
 			if (waitpid(pid[i],0,0) > 0) {   // si la espera ha tenido exito y finaliza el hijo tal...         
-	    		printf("Acaba de finalizar mi hijo %d (orden %d)\n",pid[i], i);
-	    		printf("Solo me quedan %d hijos vivos\n",nprocs - i -1);
+				printf("Acaba de finalizar mi hijo %d (orden %d)\n",pid[i], i);
+				printf("Solo me quedan %d hijos vivos\n",nprocs - i -1);
+      			}
       		}
-      	}
 	}
 
 	for (int i=0; i<nprocs; i++) {
 		if(i %2 == 0){
 			if (waitpid(pid[i],0,0) > 0) {   // si la espera ha tenido exito y finaliza el hijo tal...         
-	    		printf("Acaba de finalizar mi hijo %d (orden %d)\n",pid[i], i);
-	    		printf("Solo me quedan %d hijos vivos\n",nprocs - i -1);
+				printf("Acaba de finalizar mi hijo %d (orden %d)\n",pid[i], i);
+				printf("Solo me quedan %d hijos vivos\n",nprocs - i -1);
+      			}
       		}
-      	}
 	}
 */
 	for (int i=0; i<nprocs; i++) {
 		if (waitpid(pid[i],0,0) > 0) {   // si la espera ha tenido exito y finaliza el hijo tal...         
-	    	printf("Acaba de finalizar mi hijo %d (orden %d)\n",pid[i], i);
-	    	printf("Solo me quedan %d hijos vivos\n",nprocs - i -1);
-      	}
+			printf("Acaba de finalizar mi hijo %d (orden %d)\n",pid[i], i);
+			printf("Solo me quedan %d hijos vivos\n",nprocs - i -1);
+      		}
       	
 	}
 	
@@ -59,23 +59,19 @@ int main(int argc, char *argv[]){
 			
 			if((pid[1] = fork()) == 0){
 				printf("\nsoy el hijo %d\n", getpid());// si no es el hijo el proceso padre vuelve a invocar al hijo y continua con el código finalizar(pid)
-				//finalizar(pid);
 			}
 			else {
 				if((pid[2] = fork()) == 0){
 					printf("\nsoy el hijo %d\n", getpid());// Proceso hijo
-					//finalizar(pid);
 				}
 				else {
 					if((pid[3] = fork()) == 0){
 						printf("\nsoy el hijo %d\n", getpid());// Proceso hijo
-						//finalizar(pid);
 					}
 					else {
 						
 						if((pid[4] = fork()) == 0){
 							printf("\nsoy el hijo %d\n", getpid());// Proceso hijo
-							//finalizar(pid);
 						}
 					}
 				}
