@@ -12,8 +12,6 @@
 #include <dirent.h>
 #include <sys/types.h> //Primitive system data types for abstraction of implementation-dependent data types.
 #include <string.h>
-#define S_REGULAR(mode) (((mode) & S_IFREG) == 0100000) // un numero multiplicado por si mismo, da ese numero
-
 
 int n_archivosr = 0;
 double tam_archr = 0;
