@@ -47,7 +47,7 @@ int main(int argc, char * argv[]){
 
 		int cont = write(1,buffer,256);
 	}
-	// PARA ESTE CASO LA FUNCION EXECLP NO COGE LA ENTRADA ESTANDAR QUE HEMOS DUPLICADO, POR QUÉ?
+	//En este programa execlp no recibirá argumentos!!!
 	// Para este caso, el fichero si tiene algo escrito, será un argumento del comando
 	else{
 		// En este caso lo que tenemos que hacer es cerrar la entrada estándar para que el proceso
@@ -60,7 +60,7 @@ int main(int argc, char * argv[]){
 			exit(1);
 		}
 	
-		execlp(argv[1], "",NULL); 
+		execlp(argv[1], argv[1],NULL); 
 
 	}
 	return 0;
