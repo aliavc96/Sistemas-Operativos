@@ -56,8 +56,8 @@ int main (int argc, char * argv[])
 		           if(errno == EDEADLK)
 		               printf("ATENCION: interbloqueo detectado \n");
 		           else{
-		           		printf("ATENCION: error detectado \n");
-		           		exit(1);
+		           	printf("ATENCION: error detectado \n");
+		           	exit(1);
 		           }
 
 		}
