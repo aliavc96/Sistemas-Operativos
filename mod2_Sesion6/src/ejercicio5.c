@@ -1,3 +1,12 @@
+//Alicia Vílchez Ceballos, ETSIIT (ugr)
+/*
+Ejercicio 5: Escribir un programa, similar a la orden cp, que utilice para su implementación la
+llamada al sistema mmap() y una función de C que nos permite copiar memoria, como por
+ejemplo memcpy(). Para conocer el tamaño del archivo origen podemos utilizar stat() y para
+establecer el tamaño del archivo destino se puede usar ftruncate()
+*/
+
+
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
