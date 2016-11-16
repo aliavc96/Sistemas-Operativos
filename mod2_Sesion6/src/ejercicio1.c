@@ -1,4 +1,6 @@
 
+//Alicia Vílchez Ceballos. ETSIIT (ugr)
+
 // ejercicio1.c
 /*
 Ejercicio 1. Implementa un programa que admita t argumentos. El primer argumento será una
