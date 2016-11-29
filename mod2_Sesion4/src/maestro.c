@@ -75,29 +75,15 @@ int main(int argc, char *argv[])
 			printf("Aqui se muestran los numeros primos del rango [%d,%d]:\n",extremo_anterior, extremo_posterior);
 			//Cerrar el descriptor de ESCRITURA en el proceso padre
 			close(fd1[1]);
-			
-			//Duplicar el descriptor de lectura en cauce en el descriptor
-			//correspondiente a la salida estda r (stdout), cerrado previamente en
-			//la misma operación
-			close(STDIN_FILENO);
-			dup(fd1[0]);
-			
-			// ahora leemos de fd1[0]
+		
+			// ahora leemos de fd1[0] que es donde se encuentra la ejecucion del esclavo
 			while(read(fd1[0],&buffer, 80) > 0){
 				printf("%s", buffer);
 			}
-			
 
-			//Cerrar el descriptor de ESCRITURA en el proceso padre
+			//Cerrar el descriptor de ESCRITURA en el proceso padre puesto que solo vamos a leer
 			close(fd2[1]);
-
-			//Duplicar el descriptor de lectura en cauce en el descriptor
-			//correspondiente a la salida estda r (stdout), cerrado previamente en
-			//la misma operación
-			close(STDIN_FILENO);
-			dup(fd2[0]);
-
-			// ahora leemos de fd2[0]
+			// ahora leemos de fd2[0] de 80 en 80
 			while(read(fd2[0],&buffer2, 80) > 0){
 				printf("%s", buffer2);
 			}
